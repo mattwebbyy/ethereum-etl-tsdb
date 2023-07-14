@@ -50,3 +50,34 @@ ENV/
 
 # etl
 /last_synced_block.txt
+myenv/lib64
+myenv/pyvenv.cfg
+myenv/bin/activate
+myenv/bin/activate.csh
+myenv/bin/activate.fish
+myenv/bin/Activate.ps1
+myenv/bin/base58
+myenv/bin/easy_install
+myenv/bin/easy_install-3.9
+myenv/bin/ethereumetl
+myenv/bin/fixup_pubsub_v1_keywords.py
+myenv/bin/jp.py
+myenv/bin/jsonschema
+myenv/bin/netaddr
+myenv/bin/normalizer
+myenv/bin/pip
+myenv/bin/pip3
+myenv/bin/pip3.9
+myenv/bin/py.test
+myenv/bin/pyrsa-decrypt
+myenv/bin/pyrsa-encrypt
+myenv/bin/pyrsa-keygen
+myenv/bin/pyrsa-priv2pub
+myenv/bin/pyrsa-sign
+myenv/bin/pyrsa-verify
+myenv/bin/pytest
+myenv/bin/python
+myenv/bin/python3
+myenv/bin/python3.9
+myenv/bin/tabulate
+myenv/include/site/python3.9/greenlet/greenlet.h
