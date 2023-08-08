@@ -49,6 +49,8 @@ BLOCKS = Table(
     Column('gas_used', BigInteger),
     Column('transaction_count', BigInteger),
     Column('base_fee_per_gas', BigInteger),
+   
+
 )
 
 TRANSACTIONS = Table(
@@ -87,7 +89,7 @@ LOGS = Table(
     Column('topic1', String),
     Column('topic2', String),
     Column('topic3', String),
-    Column('block_timestamp', TIMESTAMP),
+    Column('block_timestamp', TIMESTAMP, primary_key=True),
     Column('block_number', BigInteger),
     Column('block_hash', String),
 )
@@ -100,9 +102,11 @@ TOKEN_TRANSFERS = Table(
     Column('value', Numeric(78)),
     Column('transaction_hash', String, primary_key=True),
     Column('log_index', BigInteger, primary_key=True),
-    Column('block_timestamp', TIMESTAMP),
+    Column('block_timestamp', TIMESTAMP,primary_key=True),
     Column('block_number', BigInteger),
     Column('block_hash', String),
+    PrimaryKeyConstraint('transaction_hash', 'log_index','block_timestamp', name='token_transfers_pk'),
+
 )
 
 TRACES = Table(
@@ -123,10 +127,11 @@ TRACES = Table(
     Column('trace_address', String),
     Column('error', String),
     Column('status', Integer),
-    Column('block_timestamp', TIMESTAMP),
+    Column('block_timestamp', TIMESTAMP, primary_key=True),
     Column('block_number', BigInteger),
     Column('block_hash', String),
     Column('trace_id', String, primary_key=True),
+   
 )
 
 TOKENS = Table(
@@ -138,7 +143,7 @@ TOKENS = Table(
     Column('function_sighashes', ARRAY(String)),
     Column('total_supply', Numeric(78)),
     Column('block_number', BigInteger),
-    PrimaryKeyConstraint('address', 'block_number', name='tokens_pk'),
+    PrimaryKeyConstraint('address', 'block_number', name='tokens_pkey'),
 )
 
 CONTRACTS = Table(
